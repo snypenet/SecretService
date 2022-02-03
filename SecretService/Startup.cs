@@ -33,7 +33,7 @@ namespace SecretService
             {
                 services.AddTransient<IKeyValuePairRepository, WindowsFileKeyValuePairRepository>(provider =>
                 {
-                    return new WindowsFileKeyValuePairRepository(Configuration["Storage:KeyValuePair:DirectorLocation"]);
+                    return new WindowsFileKeyValuePairRepository(Configuration["Storage:KeyValuePair:DirectoryLocation"]);
                 });
             }
             else

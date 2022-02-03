@@ -41,7 +41,7 @@ namespace SecretService.Persistence.Repositories
             name = name.Trim();
             paritionKey = paritionKey.Trim();
             var secretFile = await GetSecretsFile(paritionKey);
-            var secrets = secretFile.Pairs.Where(p => p.Group.Any(g => g.Equals(name, StringComparison.InvariantCultureIgnoreCase)));
+            var secrets = secretFile.Pairs.Where(p => p.Group.Any(g => g.Equals(name, StringComparison.InvariantCultureIgnoreCase) || g == "All"));
             return secrets;
         }
 
